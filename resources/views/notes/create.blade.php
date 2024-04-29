@@ -21,24 +21,22 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-9 col-lg-6">
                 
-                <form action="{{ route('notes.store') }}" method="post">
-                    @csrf
-
-                    <div class="mb-3">
-                        <label for="" class="form-label">Título</label>
-                        <input type="text" name="title" class="form-control">
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="" class="form-label">Contenido</label>
-                        <textarea name="content" rows="10" class="form-control"></textarea>
-                    </div>
-
-                    <div class="text-end">
-                        <input type="submit" value="Crear Nota" class="btn btn-success">
-                    </div>
-
-                </form>
+            <form action="{{ route('notes.store') }}" method="POST">
+             @csrf
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div>
+                    <label for="content">Content:</label>
+                    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="category">Category:</label>
+                    <input type="text" name="category" id="category">
+                </div>
+                <button type="submit">Create Note</button>
+            </form>
 
             </div>
         </div>
