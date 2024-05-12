@@ -54,4 +54,15 @@ class NoteController extends Controller
 
         return redirect()->route('notes.index');
     }
+
+    public function show($id)
+    {
+        $note = Note::find($id);
+
+        if (!$note) {
+            return response()->json(['error' => 'Note not found'], 404);
+        }
+
+        return response()->json($note);
+    }
 }
